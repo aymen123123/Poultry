@@ -1,0 +1,149 @@
+{
+  "doctype": "DocType",
+  "name": "Poultry Setting",
+  "module": "Poultry",
+  "issingle": 1,
+  "custom": 0,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+
+  "field_order": [
+    "cost_egg_section",
+    "calculating_the_cost_of_an_egg",
+    "cost_egg_column",
+    "cost_egg_rate",
+
+    "feed_cost_section",
+    "calculating_feed_cost",
+    "feed_cost_column",
+    "feed_cost_rate",
+
+    "chicken_farming_flock_section",
+    "chicken_farming_flock",
+    "wip",
+
+    "productive_chicken_flock_section",
+    "layer_flock_assets",
+    "layer_flock",
+    "productive_column",
+    "depreciation_entry",
+    "duration"
+  ],
+
+  "fields": [
+    {
+      "fieldname": "cost_egg_section",
+      "fieldtype": "Section Break",
+      "label": "Cost Egg"
+    },
+    {
+      "fieldname": "calculating_the_cost_of_an_egg",
+      "fieldtype": "Select",
+      "label": "Calculating the cost of an egg",
+      "options": "\nRating"
+    },
+    {
+      "fieldname": "cost_egg_column",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "0",
+      "fieldname": "cost_egg_rate",
+      "fieldtype": "Currency",
+      "label": "Rate"
+    },
+
+    {
+      "fieldname": "feed_cost_section",
+      "fieldtype": "Section Break",
+      "label": "Feed Cost"
+    },
+    {
+      "fieldname": "calculating_feed_cost",
+      "fieldtype": "Select",
+      "label": "Calculating feed cost",
+      "options": "\nRating"
+    },
+    {
+      "fieldname": "feed_cost_column",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "0",
+      "fieldname": "feed_cost_rate",
+      "fieldtype": "Currency",
+      "label": "Rate",
+      "reqd": 1
+    },
+
+    {
+      "fieldname": "chicken_farming_flock_section",
+      "fieldtype": "Section Break",
+      "label": "Chicken Farming Flock"
+    },
+    {
+      "default": "1",
+      "fieldname": "chicken_farming_flock",
+      "fieldtype": "Check",
+      "label": "Chicken Farming Flock"
+    },
+    {
+      "depends_on": "eval:doc.chicken_farming_flock==1",
+      "fieldname": "wip",
+      "fieldtype": "Link",
+      "label": "WIP",
+      "options": "Account",
+      "reqd": 1
+    },
+
+    {
+      "fieldname": "productive_chicken_flock_section",
+      "fieldtype": "Section Break",
+      "label": "The productive chicken flock"
+    },
+    {
+      "default": "1",
+      "fieldname": "layer_flock_assets",
+      "fieldtype": "Check",
+      "label": "Layer Flock Assets"
+    },
+    {
+      "depends_on": "eval:doc.layer_flock_assets==1",
+      "fieldname": "layer_flock",
+      "fieldtype": "Link",
+      "label": "Layer Flock",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "productive_column",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "1",
+      "fieldname": "depreciation_entry",
+      "fieldtype": "Check",
+      "label": "Depreciation Entry"
+    },
+    {
+      "depends_on": "eval:doc.depreciation_entry==1",
+      "fieldname": "duration",
+      "fieldtype": "Int",
+      "label": "Duration",
+      "reqd": 1
+    }
+  ],
+
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}
