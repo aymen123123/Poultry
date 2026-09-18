@@ -1,0 +1,137 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-18 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "poultry_shed",
+  "breed",
+  "column_break_basic",
+  "receipt_date",
+  "flock_status",
+  "section_break_counts",
+  "initial_qty",
+  "current_qty",
+  "column_break_counts",
+  "initial_avg_weight_g",
+  "capitalization_date",
+  "section_break_source",
+  "source_purchase_receipt"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "FLOCK-.YYYY.-"
+  },
+  {
+   "description": "العنبر المستقبل للقطيع",
+   "fieldname": "poultry_shed",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Poultry Shed",
+   "options": "Poultry Shed",
+   "reqd": 1
+  },
+  {
+   "description": "دليل السلالة المطبق لهذا القطيع",
+   "fieldname": "breed",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Breed",
+   "options": "Breed Standard",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "تاريخ استلام القطيع",
+   "fieldname": "receipt_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Receipt Date",
+   "reqd": 1
+  },
+  {
+   "default": "نشط",
+   "fieldname": "flock_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Flock Status",
+   "options": "نشط\nمرسمل\nمغلق"
+  },
+  {
+   "fieldname": "section_break_counts",
+   "fieldtype": "Section Break",
+   "label": "Counts & Weight"
+  },
+  {
+   "description": "عدد الطيور المستلمة فعلياً (بعد خصم نفوق النقل)",
+   "fieldname": "initial_qty",
+   "fieldtype": "Int",
+   "label": "Initial Qty",
+   "reqd": 1
+  },
+  {
+   "description": "العدد الحالي — يتحدّث من سجلات النفوق/الفرز اللاحقة",
+   "fieldname": "current_qty",
+   "fieldtype": "Int",
+   "label": "Current Qty"
+  },
+  {
+   "fieldname": "column_break_counts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "متوسط الوزن الابتدائي (جم)",
+   "fieldname": "initial_avg_weight_g",
+   "fieldtype": "Float",
+   "label": "Initial Avg Weight (g)"
+  },
+  {
+   "description": "تاريخ رسملة القطيع الفعلي (يُملأ لاحقاً)",
+   "fieldname": "capitalization_date",
+   "fieldtype": "Date",
+   "label": "Capitalization Date"
+  },
+  {
+   "fieldname": "section_break_source",
+   "fieldtype": "Section Break",
+   "label": "Source"
+  },
+  {
+   "description": "مرجع إذن الاستلام الأصلي",
+   "fieldname": "source_purchase_receipt",
+   "fieldtype": "Link",
+   "label": "Source Purchase Receipt",
+   "options": "Purchase Receipt"
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Poultry Flock",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

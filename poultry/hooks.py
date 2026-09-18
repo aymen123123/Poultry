@@ -20,6 +20,14 @@ add_to_apps_screen = [
 	}
 ]
 
+# Fixtures
+# ------------------
+# Ships custom fields added to core/ERPNext doctypes (e.g. Purchase Receipt) with this app.
+
+fixtures = [
+	{"doctype": "Custom Field", "filters": [["dt", "in", ["Purchase Receipt"]]]},
+]
+
 # Includes in <head>
 # ------------------
 
