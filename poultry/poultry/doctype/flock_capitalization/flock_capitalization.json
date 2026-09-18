@@ -1,0 +1,163 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-18 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "naming_series",
+  "poultry_flock",
+  "capitalization_date",
+  "column_break_basic",
+  "bird_qty",
+  "cost_per_bird",
+  "section_break_amount",
+  "capitalized_amount",
+  "section_break_accounts",
+  "wip_account",
+  "target_account",
+  "asset_category",
+  "column_break_accounts",
+  "cost_center",
+  "section_break_results",
+  "journal_entry",
+  "asset"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CAP-.YYYY.-"
+  },
+  {
+   "description": "القطيع المراد رسملته",
+   "fieldname": "poultry_flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Poultry Flock",
+   "options": "Poultry Flock",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "capitalization_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Capitalization Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "poultry_flock.current_qty",
+   "fieldname": "bird_qty",
+   "fieldtype": "Int",
+   "label": "Bird Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_per_bird",
+   "fieldtype": "Currency",
+   "label": "Cost per Bird",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_amount",
+   "fieldtype": "Section Break",
+   "label": "Capitalization Amount"
+  },
+  {
+   "description": "إجمالي المصاريف المراد رسملتها (رصيد WIP الحالي للقطيع)",
+   "fieldname": "capitalized_amount",
+   "fieldtype": "Currency",
+   "label": "Capitalized Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_accounts",
+   "fieldtype": "Section Break",
+   "label": "Accounts"
+  },
+  {
+   "description": "حساب قيد التشغيل (WIP) المراد إقفاله",
+   "fieldname": "wip_account",
+   "fieldtype": "Link",
+   "label": "WIP Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "description": "حساب الأصل الإنتاجي (Layer Flock) المراد الرسملة إليه",
+   "fieldname": "target_account",
+   "fieldtype": "Link",
+   "label": "Capitalization (Asset) Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "description": "اختياري: لو حددتها بيتم إنشاء Asset لبدء الإهلاك. لو تركتها فاضية يسوي القيد المحاسبي بس.",
+   "fieldname": "asset_category",
+   "fieldtype": "Link",
+   "label": "Asset Category",
+   "options": "Asset Category"
+  },
+  {
+   "fieldname": "column_break_accounts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_results",
+   "fieldtype": "Section Break",
+   "label": "Resulting Documents"
+  },
+  {
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "label": "Journal Entry",
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "asset",
+   "fieldtype": "Link",
+   "label": "Asset",
+   "options": "Asset",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Flock Capitalization",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
