@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "creation": "2026-09-18 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "age_week",
+  "std_body_weight_g",
+  "std_uniformity_pct",
+  "std_hen_day_pct",
+  "std_egg_weight_g",
+  "std_feed_intake_g",
+  "std_cum_mortality_pct"
+ ],
+ "fields": [
+  {
+   "description": "أسبوع العمر",
+   "fieldname": "age_week",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age Week",
+   "reqd": 1
+  },
+  {
+   "description": "وزن الجسم القياسي (جم)",
+   "fieldname": "std_body_weight_g",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Std Body Weight (g)"
+  },
+  {
+   "description": "نسبة التجانس القياسية %",
+   "fieldname": "std_uniformity_pct",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Std Uniformity %"
+  },
+  {
+   "description": "نسبة الوضع القياسية % Hen-Day",
+   "fieldname": "std_hen_day_pct",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Std Hen-Day %"
+  },
+  {
+   "description": "وزن البيضة القياسي (جم)",
+   "fieldname": "std_egg_weight_g",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Std Egg Weight (g)"
+  },
+  {
+   "description": "استهلاك العلف اليومي للطائر (جم)",
+   "fieldname": "std_feed_intake_g",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Std Feed Intake (g)"
+  },
+  {
+   "description": "النفوق التراكمي القياسي %",
+   "fieldname": "std_cum_mortality_pct",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Std Cumulative Mortality %"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "module": "Poultry",
+ "name": "Weekly Standard",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

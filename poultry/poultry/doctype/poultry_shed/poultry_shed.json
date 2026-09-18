@@ -1,0 +1,182 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:shed_code",
+ "creation": "2026-09-18 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "shed_code",
+  "farm",
+  "column_break_basic",
+  "shed_purpose",
+  "housing_system",
+  "section_break_capacity",
+  "bird_capacity",
+  "cage_rows_tiers",
+  "column_break_capacity",
+  "shed_status",
+  "last_cd_date",
+  "section_break_utilities",
+  "cooling_type",
+  "has_egg_belt",
+  "column_break_utilities",
+  "electricity_meter_no",
+  "water_meter_no",
+  "section_break_accounting",
+  "linked_warehouse",
+  "column_break_accounting",
+  "linked_cost_center"
+ ],
+ "fields": [
+  {
+   "description": "رمز العنبر — فريد (مثال: SH-01)",
+   "fieldname": "shed_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shed Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "المزرعة الأم",
+   "fieldname": "farm",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Farm",
+   "options": "Poultry Farm",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "تربية / إنتاج",
+   "fieldname": "shed_purpose",
+   "fieldtype": "Select",
+   "label": "Shed Purpose",
+   "options": "تربية\nإنتاج"
+  },
+  {
+   "description": "أقفاص مستوية / أقفاص هرمية / أرضي",
+   "fieldname": "housing_system",
+   "fieldtype": "Select",
+   "label": "Housing System",
+   "options": "أقفاص مستوية\nأقفاص هرمية\nأرضي"
+  },
+  {
+   "fieldname": "section_break_capacity",
+   "fieldtype": "Section Break",
+   "label": "Capacity & Status"
+  },
+  {
+   "description": "السعة القصوى بعدد الطيور",
+   "fieldname": "bird_capacity",
+   "fieldtype": "Int",
+   "label": "Bird Capacity"
+  },
+  {
+   "description": "عدد الصفوف والطوابق — لتوزيع العينات",
+   "fieldname": "cage_rows_tiers",
+   "fieldtype": "Int",
+   "label": "Cage Rows / Tiers"
+  },
+  {
+   "fieldname": "column_break_capacity",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "مشغول / فارغ / تحت التطهير / تحت الصيانة",
+   "fieldname": "shed_status",
+   "fieldtype": "Select",
+   "label": "Shed Status",
+   "options": "مشغول\nفارغ\nتحت التطهير\nتحت الصيانة"
+  },
+  {
+   "description": "تاريخ آخر تنظيف وتطهير",
+   "fieldname": "last_cd_date",
+   "fieldtype": "Date",
+   "label": "Last Cleaning & Disinfection Date"
+  },
+  {
+   "fieldname": "section_break_utilities",
+   "fieldtype": "Section Break",
+   "label": "Utilities"
+  },
+  {
+   "description": "خلايا تبخيرية / تكييف / تهوية نفقية",
+   "fieldname": "cooling_type",
+   "fieldtype": "Select",
+   "label": "Cooling Type",
+   "options": "خلايا تبخيرية\nتكييف\nتهوية نفقية"
+  },
+  {
+   "default": "0",
+   "description": "وجود سير نقل البيض",
+   "fieldname": "has_egg_belt",
+   "fieldtype": "Check",
+   "label": "Has Egg Belt"
+  },
+  {
+   "fieldname": "column_break_utilities",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "رقم عداد الكهرباء — لتحميل المرافق",
+   "fieldname": "electricity_meter_no",
+   "fieldtype": "Data",
+   "label": "Electricity Meter No"
+  },
+  {
+   "description": "رقم عداد المياه",
+   "fieldname": "water_meter_no",
+   "fieldtype": "Data",
+   "label": "Water Meter No"
+  },
+  {
+   "fieldname": "section_break_accounting",
+   "fieldtype": "Section Break",
+   "label": "Accounting Links"
+  },
+  {
+   "description": "المستودع المرتبط لحركات المخزون",
+   "fieldname": "linked_warehouse",
+   "fieldtype": "Link",
+   "label": "Linked Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_accounting",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "مركز التكلفة الفرعي",
+   "fieldname": "linked_cost_center",
+   "fieldtype": "Link",
+   "label": "Linked Cost Center",
+   "options": "Cost Center"
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Poultry Shed",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

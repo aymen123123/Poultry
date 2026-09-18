@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:breed_name",
+ "creation": "2026-09-18 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "breed_name",
+  "hatchery_source",
+  "section_break_weekly",
+  "weekly_standards"
+ ],
+ "fields": [
+  {
+   "description": "اسم السلالة (Lohmann Brown / ISA Brown / Hy-Line)",
+   "fieldname": "breed_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Breed Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "المفرخ/الشركة المصدر للدليل",
+   "fieldname": "hatchery_source",
+   "fieldtype": "Data",
+   "label": "Hatchery Source"
+  },
+  {
+   "fieldname": "section_break_weekly",
+   "fieldtype": "Section Break",
+   "label": "Weekly Standard"
+  },
+  {
+   "description": "صف لكل أسبوع عمر من 1 إلى 90",
+   "fieldname": "weekly_standards",
+   "fieldtype": "Table",
+   "label": "Weekly Standard",
+   "options": "Weekly Standard"
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Breed Standard",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

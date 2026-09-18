@@ -1,0 +1,180 @@
+{
+ "actions": [],
+ "creation": "2026-09-18 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "issingle": 1,
+ "field_order": [
+  "section_break_capitalization",
+  "capitalization_age_week",
+  "section_break_alerts",
+  "mortality_alert_threshold",
+  "feed_intake_deviation_threshold",
+  "column_break_alerts",
+  "egg_production_drop_threshold",
+  "low_feed_stock_threshold_days",
+  "section_break_valuation",
+  "flock_valuation_method",
+  "feed_valuation_method",
+  "column_break_valuation",
+  "egg_valuation_method",
+  "section_break_default_accounts",
+  "default_wip_flock_account",
+  "default_capitalization_account",
+  "default_mortality_loss_account",
+  "column_break_default_accounts",
+  "default_feed_consumption_account",
+  "default_egg_income_account",
+  "default_cost_center"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_capitalization",
+   "fieldtype": "Section Break",
+   "label": "Capitalization Week"
+  },
+  {
+   "default": "18",
+   "description": "العمر بالأسابيع الذي يتم عنده ترحيل القطيع من قيد التشغيل (WIP) إلى الأصل الإنتاجي (الرسملة)",
+   "fieldname": "capitalization_age_week",
+   "fieldtype": "Int",
+   "label": "Capitalization Age (Week)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_alerts",
+   "fieldtype": "Section Break",
+   "label": "Alert Thresholds"
+  },
+  {
+   "description": "الحد الأقصى المسموح به لنسبة النفوق قبل إطلاق تنبيه",
+   "fieldname": "mortality_alert_threshold",
+   "fieldtype": "Percent",
+   "label": "Mortality Alert Threshold"
+  },
+  {
+   "description": "الحد المسموح به للانحراف عن معيار استهلاك العلف قبل إطلاق تنبيه",
+   "fieldname": "feed_intake_deviation_threshold",
+   "fieldtype": "Percent",
+   "label": "Feed Intake Deviation Threshold"
+  },
+  {
+   "fieldname": "column_break_alerts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "الحد المسموح به لانخفاض نسبة الإنتاج (Hen-Day) عن المعيار قبل إطلاق تنبيه",
+   "fieldname": "egg_production_drop_threshold",
+   "fieldtype": "Percent",
+   "label": "Egg Production Drop Threshold"
+  },
+  {
+   "description": "عدد أيام المخزون المتبقية من العلف التي تستدعي تنبيه انخفاض المخزون",
+   "fieldname": "low_feed_stock_threshold_days",
+   "fieldtype": "Int",
+   "label": "Low Feed Stock Threshold (Days)"
+  },
+  {
+   "fieldname": "section_break_valuation",
+   "fieldtype": "Section Break",
+   "label": "Valuation Policy"
+  },
+  {
+   "description": "طريقة تقييم قطيع الدواجن (الأصول الإنتاجية)",
+   "fieldname": "flock_valuation_method",
+   "fieldtype": "Select",
+   "label": "Flock Valuation Method",
+   "options": "Actual Cost\nStandard Rate\nMoving Average"
+  },
+  {
+   "description": "طريقة تقييم مخزون العلف",
+   "fieldname": "feed_valuation_method",
+   "fieldtype": "Select",
+   "label": "Feed Valuation Method",
+   "options": "FIFO\nMoving Average\nStandard Rate"
+  },
+  {
+   "fieldname": "column_break_valuation",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "طريقة تقييم البيض",
+   "fieldname": "egg_valuation_method",
+   "fieldtype": "Select",
+   "label": "Egg Valuation Method",
+   "options": "Actual Cost\nStandard Rate"
+  },
+  {
+   "fieldname": "section_break_default_accounts",
+   "fieldtype": "Section Break",
+   "label": "Default Journal Entry Accounts"
+  },
+  {
+   "description": "حساب قيد التشغيل الافتراضي لقطيع التربية قبل الرسملة",
+   "fieldname": "default_wip_flock_account",
+   "fieldtype": "Link",
+   "label": "Default WIP Flock Account",
+   "options": "Account"
+  },
+  {
+   "description": "حساب الأصل الإنتاجي الذي يتم الترحيل إليه عند الرسملة",
+   "fieldname": "default_capitalization_account",
+   "fieldtype": "Link",
+   "label": "Default Capitalization Account",
+   "options": "Account"
+  },
+  {
+   "description": "حساب خسائر النفوق الافتراضي",
+   "fieldname": "default_mortality_loss_account",
+   "fieldtype": "Link",
+   "label": "Default Mortality Loss Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_default_accounts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "حساب مصروفات استهلاك العلف الافتراضي",
+   "fieldname": "default_feed_consumption_account",
+   "fieldtype": "Link",
+   "label": "Default Feed Consumption Account",
+   "options": "Account"
+  },
+  {
+   "description": "حساب إيرادات مبيعات البيض الافتراضي",
+   "fieldname": "default_egg_income_account",
+   "fieldtype": "Link",
+   "label": "Default Egg Sales Income Account",
+   "options": "Account"
+  },
+  {
+   "description": "مركز التكلفة الافتراضي للقيود المولدة تلقائياً",
+   "fieldname": "default_cost_center",
+   "fieldtype": "Link",
+   "label": "Default Cost Center",
+   "options": "Cost Center"
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Farm Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

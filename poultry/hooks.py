@@ -11,15 +11,14 @@ app_license = "mit"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "poultry",
-# 		"logo": "/assets/poultry/logo.png",
-# 		"title": "Poultry",
-# 		"route": "/poultry",
-# 		"has_permission": "poultry.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "poultry",
+		"logo": "/assets/poultry/images/logo.ico",
+		"title": "Poultry",
+		"route": "/app/poultry",
+	}
+]
 
 # Includes in <head>
 # ------------------
