@@ -1,0 +1,169 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-18 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "naming_series",
+  "log_date",
+  "poultry_flock",
+  "column_break_basic",
+  "poultry_shed",
+  "section_break_mortality",
+  "mortality_qty",
+  "culling_qty",
+  "column_break_mortality",
+  "mortality_notes",
+  "section_break_environment",
+  "water_consumption_l",
+  "column_break_env",
+  "temperature_c",
+  "humidity_pct",
+  "section_break_eggs",
+  "egg_collection",
+  "section_break_stock",
+  "stock_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "SHEDLOG-.YYYY.-.MM.-"
+  },
+  {
+   "default": "Today",
+   "fieldname": "log_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Log Date",
+   "reqd": 1
+  },
+  {
+   "description": "القطيع المعني بهذا السجل",
+   "fieldname": "poultry_flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Poultry Flock",
+   "options": "Poultry Flock",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "poultry_flock.poultry_shed",
+   "fieldname": "poultry_shed",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Poultry Shed",
+   "options": "Poultry Shed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mortality",
+   "fieldtype": "Section Break",
+   "label": "Mortality & Culling"
+  },
+  {
+   "default": "0",
+   "description": "عدد النفوق اليومي",
+   "fieldname": "mortality_qty",
+   "fieldtype": "Int",
+   "label": "Mortality Qty"
+  },
+  {
+   "default": "0",
+   "description": "عدد الاستبعاد اليومي (طيور ضعيفة/غير مطابقة يتم استبعادها)",
+   "fieldname": "culling_qty",
+   "fieldtype": "Int",
+   "label": "Culling Qty"
+  },
+  {
+   "fieldname": "column_break_mortality",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mortality_notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "section_break_environment",
+   "fieldtype": "Section Break",
+   "label": "Environment"
+  },
+  {
+   "description": "استهلاك المياه (لتر)",
+   "fieldname": "water_consumption_l",
+   "fieldtype": "Float",
+   "label": "Water Consumption (L)"
+  },
+  {
+   "fieldname": "column_break_env",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "temperature_c",
+   "fieldtype": "Float",
+   "label": "Temperature (°C)"
+  },
+  {
+   "fieldname": "humidity_pct",
+   "fieldtype": "Percent",
+   "label": "Humidity %"
+  },
+  {
+   "fieldname": "section_break_eggs",
+   "fieldtype": "Section Break",
+   "label": "Egg Collection"
+  },
+  {
+   "fieldname": "egg_collection",
+   "fieldtype": "Table",
+   "label": "Egg Collection",
+   "options": "Egg Collection Detail"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_stock",
+   "fieldtype": "Section Break",
+   "label": "Stock Movement"
+  },
+  {
+   "description": "حركة المخزون المُنشأة تلقائياً لبيض هذا السجل",
+   "fieldname": "stock_entry",
+   "fieldtype": "Link",
+   "label": "Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Daily Shed Log",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
