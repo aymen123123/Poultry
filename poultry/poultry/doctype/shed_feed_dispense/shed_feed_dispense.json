@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-18 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "naming_series",
+  "dispense_date",
+  "poultry_flock",
+  "column_break_basic",
+  "poultry_shed",
+  "source_warehouse",
+  "section_break_items",
+  "feed_items",
+  "section_break_stock",
+  "stock_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "FEED-.YYYY.-.MM.-"
+  },
+  {
+   "default": "Today",
+   "fieldname": "dispense_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Dispense Date",
+   "reqd": 1
+  },
+  {
+   "description": "القطيع المستلم للعلف",
+   "fieldname": "poultry_flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Poultry Flock",
+   "options": "Poultry Flock",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "poultry_flock.poultry_shed",
+   "fieldname": "poultry_shed",
+   "fieldtype": "Link",
+   "label": "Poultry Shed",
+   "options": "Poultry Shed",
+   "read_only": 1
+  },
+  {
+   "description": "الصومعة / مخزن العلف",
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_items",
+   "fieldtype": "Section Break",
+   "label": "Feed Items"
+  },
+  {
+   "fieldname": "feed_items",
+   "fieldtype": "Table",
+   "label": "Feed Items",
+   "options": "Feed Dispense Detail",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_stock",
+   "fieldtype": "Section Break",
+   "label": "Stock Movement"
+  },
+  {
+   "description": "حركة الصرف المُنشأة تلقائياً",
+   "fieldname": "stock_entry",
+   "fieldtype": "Link",
+   "label": "Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Shed Feed Dispense",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
