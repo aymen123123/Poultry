@@ -1,9 +1,18 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
+from frappe.utils import flt
 
 
 class DailyShedLog(Document):
+	def validate(self):
+		self.compute_egg_totals()
+
+	def compute_egg_totals(self):
+		self.total_eggs_collected = sum(flt(row.qty) for row in self.egg_collection or [])
+		flock_qty = frappe.db.get_value("Poultry Flock", self.poultry_flock, "current_qty")
+		self.hen_day_pct = (self.total_eggs_collected / flock_qty * 100) if flock_qty else 0
+
 	def on_submit(self):
 		self.update_flock_count()
 		self.make_egg_stock_entry()

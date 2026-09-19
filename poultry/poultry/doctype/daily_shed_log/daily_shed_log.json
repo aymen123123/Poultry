@@ -24,6 +24,9 @@
   "humidity_pct",
   "section_break_eggs",
   "egg_collection",
+  "column_break_eggs",
+  "total_eggs_collected",
+  "hen_day_pct",
   "section_break_stock",
   "stock_entry"
  ],
@@ -127,6 +130,24 @@
    "fieldtype": "Table",
    "label": "Egg Collection",
    "options": "Egg Collection Detail"
+  },
+  {
+   "fieldname": "column_break_eggs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "إجمالي البيض المجمّع اليوم (كل الأصناف/الدرجات)",
+   "fieldname": "total_eggs_collected",
+   "fieldtype": "Int",
+   "label": "Total Eggs Collected",
+   "read_only": 1
+  },
+  {
+   "description": "كفاءة الوضع = إجمالي البيض ÷ عدد الطيور الحالي بالقطيع × 100",
+   "fieldname": "hen_day_pct",
+   "fieldtype": "Percent",
+   "label": "Hen-Day %",
+   "read_only": 1
   },
   {
    "collapsible": 1,
