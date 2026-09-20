@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-19 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "naming_series",
+  "grading_date",
+  "warehouse",
+  "column_break_basic",
+  "raw_item",
+  "raw_qty",
+  "section_break_grades",
+  "grading_details",
+  "section_break_stock",
+  "stock_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "GRADE-.YYYY.-.MM.-"
+  },
+  {
+   "default": "Today",
+   "fieldname": "grading_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Grading Date",
+   "reqd": 1
+  },
+  {
+   "description": "المخزن اللي فيه البيض الخام وتُودع فيه الدرجات الناتجة",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "EGG-GOOD",
+   "description": "صنف البيض الخام المراد فرزه",
+   "fieldname": "raw_item",
+   "fieldtype": "Link",
+   "label": "Raw Item",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "description": "الكمية المراد فرزها — يجب أن تساوي مجموع الدرجات أدناه",
+   "fieldname": "raw_qty",
+   "fieldtype": "Float",
+   "label": "Raw Qty",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_grades",
+   "fieldtype": "Section Break",
+   "label": "Grade Distribution"
+  },
+  {
+   "fieldname": "grading_details",
+   "fieldtype": "Table",
+   "label": "Grade Distribution",
+   "options": "Egg Grading Detail",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_stock",
+   "fieldtype": "Section Break",
+   "label": "Stock Movement"
+  },
+  {
+   "description": "حركة إعادة التعبئة (Repack) المُنشأة تلقائياً",
+   "fieldname": "stock_entry",
+   "fieldtype": "Link",
+   "label": "Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Egg Grading",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
