@@ -25,7 +25,12 @@ add_to_apps_screen = [
 # Ships custom fields added to core/ERPNext doctypes (e.g. Purchase Receipt) with this app.
 
 fixtures = [
-	{"doctype": "Custom Field", "filters": [["dt", "in", ["Purchase Receipt"]]]},
+	{
+		"doctype": "Custom Field",
+		"filters": [
+			["dt", "in", ["Purchase Receipt", "Asset", "Asset Maintenance", "Asset Maintenance Log"]]
+		],
+	},
 ]
 
 # Scheduled Tasks
@@ -35,6 +40,16 @@ scheduler_events = {
 	"daily": [
 		"poultry.tasks.daily_cost_run",
 	],
+}
+
+# Document Events
+# ------------------
+
+doc_events = {
+	"Asset Maintenance Log": {
+		"on_submit": "poultry.poultry.custom.asset_maintenance_log.make_maintenance_je",
+		"on_cancel": "poultry.poultry.custom.asset_maintenance_log.cancel_maintenance_je",
+	},
 }
 
 # Includes in <head>

@@ -1,0 +1,223 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "naming_series",
+  "reading_month",
+  "poultry_shed",
+  "column_break_basic",
+  "cost_center",
+  "section_break_electricity",
+  "previous_electricity_reading",
+  "current_electricity_reading",
+  "electricity_consumption_kwh",
+  "column_break_electricity",
+  "electricity_rate_per_kwh",
+  "electricity_amount",
+  "section_break_water",
+  "previous_water_reading",
+  "current_water_reading",
+  "water_consumption_m3",
+  "column_break_water",
+  "water_rate_per_m3",
+  "water_amount",
+  "section_break_diesel",
+  "diesel_consumed_liters",
+  "column_break_diesel",
+  "diesel_rate_per_liter",
+  "diesel_amount",
+  "section_break_totals",
+  "total_utilities_cost",
+  "column_break_totals",
+  "journal_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "UTIL-.YYYY.-.MM.-"
+  },
+  {
+   "description": "أول يوم من شهر القراءة",
+   "fieldname": "reading_month",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Reading Month",
+   "reqd": 1
+  },
+  {
+   "description": "العنبر المقروء عداداته",
+   "fieldname": "poultry_shed",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Poultry Shed",
+   "options": "Poultry Shed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "مركز التكلفة الفرعي للعنبر — يُحمَّل عليه المصروف الفعلي",
+   "fetch_from": "poultry_shed.linked_cost_center",
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_electricity",
+   "fieldtype": "Section Break",
+   "label": "Electricity"
+  },
+  {
+   "fieldname": "previous_electricity_reading",
+   "fieldtype": "Float",
+   "label": "Previous Electricity Reading (kWh)"
+  },
+  {
+   "fieldname": "current_electricity_reading",
+   "fieldtype": "Float",
+   "label": "Current Electricity Reading (kWh)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "electricity_consumption_kwh",
+   "fieldtype": "Float",
+   "label": "Electricity Consumption (kWh)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_electricity",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "سعر الكيلوواط/ساعة الحالي",
+   "fieldname": "electricity_rate_per_kwh",
+   "fieldtype": "Currency",
+   "label": "Electricity Rate / kWh"
+  },
+  {
+   "fieldname": "electricity_amount",
+   "fieldtype": "Currency",
+   "label": "Electricity Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_water",
+   "fieldtype": "Section Break",
+   "label": "Water"
+  },
+  {
+   "fieldname": "previous_water_reading",
+   "fieldtype": "Float",
+   "label": "Previous Water Reading (m³)"
+  },
+  {
+   "fieldname": "current_water_reading",
+   "fieldtype": "Float",
+   "label": "Current Water Reading (m³)"
+  },
+  {
+   "fieldname": "water_consumption_m3",
+   "fieldtype": "Float",
+   "label": "Water Consumption (m³)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_water",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "water_rate_per_m3",
+   "fieldtype": "Currency",
+   "label": "Water Rate / m³"
+  },
+  {
+   "fieldname": "water_amount",
+   "fieldtype": "Currency",
+   "label": "Water Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_diesel",
+   "fieldtype": "Section Break",
+   "label": "Diesel (Generator)"
+  },
+  {
+   "description": "كمية ديزل مولد الطوارئ المستهلكة خلال الشهر — بدون عداد، تُدخل مباشرة باللتر",
+   "fieldname": "diesel_consumed_liters",
+   "fieldtype": "Float",
+   "label": "Diesel Consumed (Liters)"
+  },
+  {
+   "fieldname": "column_break_diesel",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "diesel_rate_per_liter",
+   "fieldtype": "Currency",
+   "label": "Diesel Rate / Liter"
+  },
+  {
+   "fieldname": "diesel_amount",
+   "fieldtype": "Currency",
+   "label": "Diesel Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_totals",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "total_utilities_cost",
+   "fieldtype": "Currency",
+   "label": "Total Utilities Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_totals",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "قيد اليومية المُنشأ تلقائياً لتحميل المصروف الفعلي على القطيع الحالي بالعنبر",
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "label": "Journal Entry",
+   "options": "Journal Entry",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Shed Utilities",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

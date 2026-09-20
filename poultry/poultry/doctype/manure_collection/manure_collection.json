@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "naming_series",
+  "collection_date",
+  "poultry_shed",
+  "column_break_basic",
+  "poultry_flock",
+  "warehouse",
+  "section_break_quantity",
+  "quantity_kg",
+  "section_break_disposal",
+  "disposal_type",
+  "column_break_disposal",
+  "customer",
+  "sale_rate",
+  "disposal_notes",
+  "section_break_stock",
+  "receipt_stock_entry",
+  "column_break_stock",
+  "sales_invoice",
+  "disposal_stock_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "MANURE-.YYYY.-.MM.-"
+  },
+  {
+   "default": "Today",
+   "fieldname": "collection_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Collection Date",
+   "reqd": 1
+  },
+  {
+   "description": "العنبر المصدر للسماد والفرشة",
+   "fieldname": "poultry_shed",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Poultry Shed",
+   "options": "Poultry Shed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "القطيع الحالي بالعنبر (اختياري — للتوثيق فقط)",
+   "fieldname": "poultry_flock",
+   "fieldtype": "Link",
+   "label": "Poultry Flock",
+   "options": "Poultry Flock"
+  },
+  {
+   "fetch_from": "poultry_shed.linked_warehouse",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_quantity",
+   "fieldtype": "Section Break",
+   "label": "Quantity"
+  },
+  {
+   "description": "الكمية المستخرجة من السماد والفرشة",
+   "fieldname": "quantity_kg",
+   "fieldtype": "Float",
+   "label": "Quantity (kg)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_disposal",
+   "fieldtype": "Section Break",
+   "label": "Disposal"
+  },
+  {
+   "fieldname": "disposal_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Disposal Type",
+   "options": "بيع\nتخلص بيئي",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_disposal",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.disposal_type==\"بيع\"",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "mandatory_depends_on": "eval:doc.disposal_type==\"بيع\"",
+   "options": "Customer"
+  },
+  {
+   "depends_on": "eval:doc.disposal_type==\"بيع\"",
+   "description": "سعر بيع الكيلوجرام الواحد",
+   "fieldname": "sale_rate",
+   "fieldtype": "Currency",
+   "label": "Sale Rate / kg",
+   "mandatory_depends_on": "eval:doc.disposal_type==\"بيع\""
+  },
+  {
+   "depends_on": "eval:doc.disposal_type==\"تخلص بيئي\"",
+   "description": "الجهة والطريقة المستخدمة للتخلص البيئي من السماد",
+   "fieldname": "disposal_notes",
+   "fieldtype": "Small Text",
+   "label": "Disposal Notes"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_stock",
+   "fieldtype": "Section Break",
+   "label": "Stock & Accounting"
+  },
+  {
+   "description": "حركة استلام السماد كمخزون — تُنشأ تلقائياً",
+   "fieldname": "receipt_stock_entry",
+   "fieldtype": "Link",
+   "label": "Receipt Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_stock",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "فاتورة البيع — تُنشأ تلقائياً عند اختيار (بيع)",
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "description": "حركة صرف السماد للتخلص البيئي — تُنشأ تلقائياً عند اختيار (تخلص بيئي)",
+   "fieldname": "disposal_stock_entry",
+   "fieldtype": "Link",
+   "label": "Disposal Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Manure Collection",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

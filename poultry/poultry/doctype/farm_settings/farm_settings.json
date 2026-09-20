@@ -30,6 +30,8 @@
   "default_cd_expense_account",
   "default_utilities_expense_account",
   "default_labor_expense_account",
+  "default_maintenance_expense_account",
+  "default_manure_disposal_expense_account",
   "default_cost_center",
   "section_break_cost_run",
   "cost_allocation_basis"
@@ -181,6 +183,20 @@
    "fieldname": "default_labor_expense_account",
    "fieldtype": "Link",
    "label": "Default Labor Expense Account",
+   "options": "Account"
+  },
+  {
+   "description": "حساب مصروفات صيانة المعدات — يُحمَّل عليه سجل صيانة المعدات (Asset Maintenance Log) عند الإقفال",
+   "fieldname": "default_maintenance_expense_account",
+   "fieldtype": "Link",
+   "label": "Default Equipment Maintenance Expense Account",
+   "options": "Account"
+  },
+  {
+   "description": "حساب مصروف التخلص البيئي من السماد والفرشة — يُستخدم كحساب مصروف عند صرف مخزون السماد للتخلص منه بدل بيعه",
+   "fieldname": "default_manure_disposal_expense_account",
+   "fieldtype": "Link",
+   "label": "Default Manure Disposal Expense Account",
    "options": "Account"
   },
   {
