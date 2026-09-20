@@ -19,7 +19,9 @@
   "initial_avg_weight_g",
   "capitalization_date",
   "section_break_source",
-  "source_purchase_receipt"
+  "source_purchase_receipt",
+  "section_break_biosecurity",
+  "withdrawal_hold_until"
  ],
  "fields": [
   {
@@ -111,6 +113,19 @@
    "fieldtype": "Link",
    "label": "Source Purchase Receipt",
    "options": "Purchase Receipt"
+  },
+  {
+   "fieldname": "section_break_biosecurity",
+   "fieldtype": "Section Break",
+   "label": "Biosecurity"
+  },
+  {
+   "description": "تُملأ تلقائياً من آخر صرف دواء — منتجات هذا القطيع تحت حظر البيع حتى هذا التاريخ",
+   "fieldname": "withdrawal_hold_until",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Withdrawal Hold Until",
+   "read_only": 1
   }
  ],
  "links": [],

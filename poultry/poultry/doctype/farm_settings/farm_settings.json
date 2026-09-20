@@ -26,7 +26,13 @@
   "column_break_default_accounts",
   "default_feed_consumption_account",
   "default_egg_income_account",
-  "default_cost_center"
+  "default_medication_expense_account",
+  "default_cd_expense_account",
+  "default_utilities_expense_account",
+  "default_labor_expense_account",
+  "default_cost_center",
+  "section_break_cost_run",
+  "cost_allocation_basis"
  ],
  "fields": [
   {
@@ -150,11 +156,52 @@
    "options": "Account"
   },
   {
+   "description": "حساب مصروفات الأدوية والمضادات الحيوية الافتراضي",
+   "fieldname": "default_medication_expense_account",
+   "fieldtype": "Link",
+   "label": "Default Medication Expense Account",
+   "options": "Account"
+  },
+  {
+   "description": "حساب مصروفات التنظيف والتطهير الافتراضي",
+   "fieldname": "default_cd_expense_account",
+   "fieldtype": "Link",
+   "label": "Default Cleaning & Disinfection Expense Account",
+   "options": "Account"
+  },
+  {
+   "description": "حساب مصروفات المرافق (كهرباء/مياه/وقود) الافتراضي",
+   "fieldname": "default_utilities_expense_account",
+   "fieldtype": "Link",
+   "label": "Default Utilities Expense Account",
+   "options": "Account"
+  },
+  {
+   "description": "حساب مصروفات العمالة الافتراضي",
+   "fieldname": "default_labor_expense_account",
+   "fieldtype": "Link",
+   "label": "Default Labor Expense Account",
+   "options": "Account"
+  },
+  {
    "description": "مركز التكلفة الافتراضي للقيود المولدة تلقائياً",
    "fieldname": "default_cost_center",
    "fieldtype": "Link",
    "label": "Default Cost Center",
    "options": "Cost Center"
+  },
+  {
+   "fieldname": "section_break_cost_run",
+   "fieldtype": "Section Break",
+   "label": "Daily Cost Run"
+  },
+  {
+   "default": "عدد الطيور الحالي",
+   "description": "أساس توزيع المرافق والعمالة المشتركة على القطعان النشطة عند التشغيلة الليلية",
+   "fieldname": "cost_allocation_basis",
+   "fieldtype": "Select",
+   "label": "Shared Cost Allocation Basis",
+   "options": "عدد الطيور الحالي\nتوزيع متساوٍ"
   }
  ],
  "links": [],

@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "naming_series",
+  "poultry_flock",
+  "depopulation_date",
+  "section_break_sale",
+  "customer",
+  "birds_sold_qty",
+  "sale_amount",
+  "section_break_results",
+  "sales_invoice",
+  "disposal_journal_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "DEPOP-.YYYY.-.MM.-"
+  },
+  {
+   "description": "القطيع المراد إقفاله",
+   "fieldname": "poultry_flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Poultry Flock",
+   "options": "Poultry Flock",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "depopulation_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Depopulation Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_sale",
+   "fieldtype": "Section Break",
+   "label": "Culled Bird Sale"
+  },
+  {
+   "description": "المشتري — مطلوب فقط إذا فيه بيع",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "description": "عدد الطيور المستبعدة المباعة كلحم",
+   "fieldname": "birds_sold_qty",
+   "fieldtype": "Int",
+   "label": "Birds Sold Qty"
+  },
+  {
+   "description": "قيمة بيع الطيور المستبعدة",
+   "fieldname": "sale_amount",
+   "fieldtype": "Currency",
+   "label": "Sale Amount"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_results",
+   "fieldtype": "Section Break",
+   "label": "Resulting Documents"
+  },
+  {
+   "description": "فاتورة بيع الطيور المستبعدة",
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "description": "قيد إقفال الأصل (شطب/إهلاك نهائي)",
+   "fieldname": "disposal_journal_entry",
+   "fieldtype": "Link",
+   "label": "Disposal Journal Entry",
+   "options": "Journal Entry",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Flock Depopulation",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

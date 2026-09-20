@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "creation": "2026-09-20 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "age_week",
+  "vaccine_name",
+  "route"
+ ],
+ "fields": [
+  {
+   "fieldname": "age_week",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age Week",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vaccine_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vaccine Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Route",
+   "options": "مياه الشرب\nحقن\nرذاذ\nقطرة عين"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "module": "Poultry",
+ "name": "Vaccination Schedule Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

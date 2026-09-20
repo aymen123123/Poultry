@@ -1,0 +1,208 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "naming_series",
+  "shed",
+  "previous_flock",
+  "column_break_basic",
+  "depopulation_date",
+  "section_break_steps",
+  "cleaning_steps",
+  "section_break_disinfectant",
+  "disinfectant_used",
+  "disinfectant_qty",
+  "section_break_lab",
+  "swab_test_date",
+  "swab_result",
+  "section_break_clearance",
+  "downtime_days",
+  "clearance_status",
+  "clearance_date",
+  "column_break_clearance",
+  "total_cd_cost",
+  "charged_to_flock",
+  "section_break_stock",
+  "stock_entry",
+  "journal_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CD-.YYYY.-.MM.-"
+  },
+  {
+   "description": "العنبر المراد تنظيفه وتطهيره",
+   "fieldname": "shed",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shed",
+   "options": "Poultry Shed",
+   "reqd": 1
+  },
+  {
+   "description": "القطيع السابق الذي أخلى العنبر",
+   "fieldname": "previous_flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Previous Flock",
+   "options": "Poultry Flock",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "description": "تاريخ إخلاء العنبر",
+   "fieldname": "depopulation_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Depopulation Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_steps",
+   "fieldtype": "Section Break",
+   "label": "Cleaning Steps"
+  },
+  {
+   "fieldname": "cleaning_steps",
+   "fieldtype": "Table",
+   "label": "Cleaning Steps",
+   "options": "Cleaning Step"
+  },
+  {
+   "fieldname": "section_break_disinfectant",
+   "fieldtype": "Section Break",
+   "label": "Disinfectant"
+  },
+  {
+   "description": "المطهّر المستخدم — يُصرف من المخزن",
+   "fieldname": "disinfectant_used",
+   "fieldtype": "Link",
+   "label": "Disinfectant Used",
+   "options": "Item"
+  },
+  {
+   "fieldname": "disinfectant_qty",
+   "fieldtype": "Float",
+   "label": "Disinfectant Qty"
+  },
+  {
+   "fieldname": "section_break_lab",
+   "fieldtype": "Section Break",
+   "label": "Lab Test"
+  },
+  {
+   "description": "تاريخ أخذ المسحات",
+   "fieldname": "swab_test_date",
+   "fieldtype": "Date",
+   "label": "Swab Test Date"
+  },
+  {
+   "description": "النتيجة الموجبة تمنع التسكين",
+   "fieldname": "swab_result",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Swab Result",
+   "options": "\nسالب\nموجب"
+  },
+  {
+   "fieldname": "section_break_clearance",
+   "fieldtype": "Section Break",
+   "label": "Clearance & Cost"
+  },
+  {
+   "description": "أيام الراحة الفعلية = تاريخ الاعتماد − تاريخ الإخلاء",
+   "fieldname": "downtime_days",
+   "fieldtype": "Int",
+   "label": "Downtime Days",
+   "read_only": 1
+  },
+  {
+   "default": "غير معتمد",
+   "description": "يمنع إنشاء قطيع جديد بهذا العنبر إلا إذا كانت \"معتمد للتسكين\"",
+   "fieldname": "clearance_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Clearance Status",
+   "options": "غير معتمد\nمعتمد للتسكين"
+  },
+  {
+   "fieldname": "clearance_date",
+   "fieldtype": "Date",
+   "label": "Clearance Date"
+  },
+  {
+   "fieldname": "column_break_clearance",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "تكلفة دورة التنظيف والتطهير الكاملة",
+   "fieldname": "total_cd_cost",
+   "fieldtype": "Currency",
+   "label": "Total C&D Cost"
+  },
+  {
+   "description": "القطيع القادم الذي تُحمّل عليه هذه التكلفة",
+   "fieldname": "charged_to_flock",
+   "fieldtype": "Link",
+   "label": "Charged to Flock",
+   "options": "Poultry Flock"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_stock",
+   "fieldtype": "Section Break",
+   "label": "Resulting Documents"
+  },
+  {
+   "description": "حركة صرف المطهّر من المخزون",
+   "fieldname": "stock_entry",
+   "fieldtype": "Link",
+   "label": "Stock Entry",
+   "options": "Stock Entry",
+   "read_only": 1
+  },
+  {
+   "description": "قيد ترحيل التكلفة للقطيع القادم",
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "label": "Journal Entry",
+   "options": "Journal Entry",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Shed Cleaning Disinfection",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

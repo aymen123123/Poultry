@@ -28,6 +28,15 @@ fixtures = [
 	{"doctype": "Custom Field", "filters": [["dt", "in", ["Purchase Receipt"]]]},
 ]
 
+# Scheduled Tasks
+# ------------------
+
+scheduler_events = {
+	"daily": [
+		"poultry.tasks.daily_cost_run",
+	],
+}
+
 # Includes in <head>
 # ------------------
 

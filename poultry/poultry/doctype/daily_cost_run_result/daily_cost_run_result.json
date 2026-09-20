@@ -1,0 +1,145 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "log_date",
+  "poultry_flock",
+  "section_break_costs",
+  "feed_cost",
+  "depreciation_cost",
+  "column_break_costs",
+  "allocated_utilities_cost",
+  "allocated_labor_cost",
+  "total_cost",
+  "section_break_production",
+  "eggs_collected",
+  "column_break_production",
+  "cost_per_egg",
+  "cost_per_carton30",
+  "journal_entry"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "COSTRUN-.YYYY.-.MM.-.DD.-"
+  },
+  {
+   "fieldname": "log_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Log Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "poultry_flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Poultry Flock",
+   "options": "Poultry Flock",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_costs",
+   "fieldtype": "Section Break",
+   "label": "Cost Breakdown"
+  },
+  {
+   "description": "تكلفة العلف المصروف لهذا القطيع اليوم",
+   "fieldname": "feed_cost",
+   "fieldtype": "Currency",
+   "label": "Feed Cost"
+  },
+  {
+   "description": "إهلاك اليوم لأصل هذا القطيع (إن وُجد)",
+   "fieldname": "depreciation_cost",
+   "fieldtype": "Currency",
+   "label": "Depreciation Cost"
+  },
+  {
+   "fieldname": "column_break_costs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "حصة القطيع من المرافق المشتركة",
+   "fieldname": "allocated_utilities_cost",
+   "fieldtype": "Currency",
+   "label": "Allocated Utilities Cost"
+  },
+  {
+   "description": "حصة القطيع من العمالة المشتركة",
+   "fieldname": "allocated_labor_cost",
+   "fieldtype": "Currency",
+   "label": "Allocated Labor Cost"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_production",
+   "fieldtype": "Section Break",
+   "label": "Production"
+  },
+  {
+   "fieldname": "eggs_collected",
+   "fieldtype": "Int",
+   "label": "Eggs Collected"
+  },
+  {
+   "fieldname": "column_break_production",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cost_per_egg",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Cost per Egg",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_per_carton30",
+   "fieldtype": "Currency",
+   "label": "Cost per Carton (30)",
+   "read_only": 1
+  },
+  {
+   "description": "قيد ترحيل حصة المرافق/العمالة لهذا القطيع",
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "label": "Journal Entry",
+   "options": "Journal Entry",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Daily Cost Run Result",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "log_date",
+ "sort_order": "DESC"
+}

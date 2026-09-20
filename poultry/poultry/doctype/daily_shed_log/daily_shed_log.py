@@ -7,11 +7,26 @@ from frappe.utils import flt
 class DailyShedLog(Document):
 	def validate(self):
 		self.compute_egg_totals()
+		self.warn_if_under_withdrawal_hold()
 
 	def compute_egg_totals(self):
 		self.total_eggs_collected = sum(flt(row.qty) for row in self.egg_collection or [])
 		flock_qty = frappe.db.get_value("Poultry Flock", self.poultry_flock, "current_qty")
 		self.hen_day_pct = (self.total_eggs_collected / flock_qty * 100) if flock_qty else 0
+
+	def warn_if_under_withdrawal_hold(self):
+		if not self.egg_collection:
+			return
+		hold_until = frappe.db.get_value("Poultry Flock", self.poultry_flock, "withdrawal_hold_until")
+		if hold_until and self.log_date <= hold_until:
+			frappe.msgprint(
+				_(
+					"{0} is still under a medication withdrawal hold until {1}. Eggs collected"
+					" today must not be sold or delivered to customers."
+				).format(self.poultry_flock, hold_until),
+				indicator="orange",
+				alert=True,
+			)
 
 	def on_submit(self):
 		self.update_flock_count()
