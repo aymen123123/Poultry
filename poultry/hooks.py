@@ -28,7 +28,18 @@ fixtures = [
 	{
 		"doctype": "Custom Field",
 		"filters": [
-			["dt", "in", ["Purchase Receipt", "Asset", "Asset Maintenance", "Asset Maintenance Log"]]
+			[
+				"dt",
+				"in",
+				[
+					"Purchase Receipt",
+					"Asset",
+					"Asset Maintenance",
+					"Asset Maintenance Log",
+					"Delivery Note Item",
+					"Sales Invoice Item",
+				],
+			]
 		],
 	},
 ]

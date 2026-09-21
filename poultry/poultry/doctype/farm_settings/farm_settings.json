@@ -32,9 +32,12 @@
   "default_labor_expense_account",
   "default_maintenance_expense_account",
   "default_manure_disposal_expense_account",
+  "default_asset_value_reduction_account",
   "default_cost_center",
   "section_break_cost_run",
-  "cost_allocation_basis"
+  "cost_allocation_basis",
+  "section_break_traceability",
+  "egg_processing_lag_days"
  ],
  "fields": [
   {
@@ -200,6 +203,13 @@
    "options": "Account"
   },
   {
+   "description": "الحساب المقابل عند تخفيض قيمة أصل القطيع تدريجياً مع كل عملية بيع دجاج مستبعد دوري (Cull Hen Sale)",
+   "fieldname": "default_asset_value_reduction_account",
+   "fieldtype": "Link",
+   "label": "Default Asset Value Reduction Account",
+   "options": "Account"
+  },
+  {
    "description": "مركز التكلفة الافتراضي للقيود المولدة تلقائياً",
    "fieldname": "default_cost_center",
    "fieldtype": "Link",
@@ -218,6 +228,19 @@
    "fieldtype": "Select",
    "label": "Shared Cost Allocation Basis",
    "options": "عدد الطيور الحالي\nتوزيع متساوٍ"
+  },
+  {
+   "fieldname": "section_break_traceability",
+   "fieldtype": "Section Break",
+   "label": "Traceability"
+  },
+  {
+   "default": "1",
+   "description": "الفارق الزمني المعتاد (بالأيام) بين جمع البيض وتعبئته — يُستخدم لتضييق نافزة البحث عن العنبر والقطيع المصدر عند تتبع اللوط رجوعاً",
+   "fieldname": "egg_processing_lag_days",
+   "fieldtype": "Int",
+   "label": "Egg Processing Lag (Days)",
+   "reqd": 1
   }
  ],
  "links": [],

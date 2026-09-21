@@ -1,0 +1,176 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-21 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "naming_series",
+  "sale_date",
+  "poultry_flock",
+  "column_break_basic",
+  "customer",
+  "section_break_qty",
+  "birds_sold_qty",
+  "column_break_qty",
+  "sale_amount",
+  "section_break_asset",
+  "asset",
+  "current_flock_qty",
+  "column_break_asset",
+  "current_asset_value",
+  "new_asset_value",
+  "section_break_docs",
+  "sales_invoice",
+  "column_break_docs",
+  "asset_value_adjustment"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CULL-.YYYY.-.MM.-"
+  },
+  {
+   "default": "Today",
+   "fieldname": "sale_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Sale Date",
+   "reqd": 1
+  },
+  {
+   "description": "القطيع المصدر لعملية البيع الدوري (بدون إقفال أو تصفية نهائية)",
+   "fieldname": "poultry_flock",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Poultry Flock",
+   "options": "Poultry Flock",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_qty",
+   "fieldtype": "Section Break",
+   "label": "Sale"
+  },
+  {
+   "description": "عدد الطيور المستبعدة المباعة بهذه الدفعة",
+   "fieldname": "birds_sold_qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Birds Sold Qty",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_qty",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "إجمالي قيمة البيع",
+   "fieldname": "sale_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Sale Amount",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_asset",
+   "fieldtype": "Section Break",
+   "label": "Biological Asset Value Reduction"
+  },
+  {
+   "description": "أصل القطيع المرسمل — إن وُجد",
+   "fieldname": "asset",
+   "fieldtype": "Link",
+   "label": "Asset",
+   "options": "Asset",
+   "read_only": 1
+  },
+  {
+   "description": "عدد الطيور بالقطيع قبل هذه العملية",
+   "fieldname": "current_flock_qty",
+   "fieldtype": "Int",
+   "label": "Flock Qty Before Sale",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_asset",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "current_asset_value",
+   "fieldtype": "Currency",
+   "label": "Current Asset Value",
+   "read_only": 1
+  },
+  {
+   "description": "القيمة الجديدة للأصل بعد تخفيضها بنسبة الطيور المباعة",
+   "fieldname": "new_asset_value",
+   "fieldtype": "Currency",
+   "label": "New Asset Value",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_docs",
+   "fieldtype": "Section Break",
+   "label": "Linked Documents"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_docs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "asset_value_adjustment",
+   "fieldtype": "Link",
+   "label": "Asset Value Adjustment",
+   "options": "Asset Value Adjustment",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "module": "Poultry",
+ "name": "Cull Hen Sale",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
